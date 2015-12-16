@@ -21,18 +21,13 @@ module.exports = function (app,db) {
 
 
             db.getConnection(function (err, connection) {
-                connection.query("CREATE TABLE asdf", function (err, results){
+
+
+                connection.query('insert into adventure set ?', adventure, function (err, result) {
+                    //catch mysql connection error
                     if (err) throw err;
                     connection.release();
-
                 });
-
-
-               // connection.query('insert into adventure set ?', adventure, function (err, result) {
-                    //catch mysql connection error
-                //    if (err) throw err;
-               //     connection.release();
-              //  });
 
 
             });
@@ -89,4 +84,4 @@ module.exports = function (app,db) {
 
 
 
-}
+};
