@@ -8,15 +8,13 @@ module.exports = function (app,db) {
 
 
 
-    var theQuerry="CREATE TABLE ASDF";
+    var theQuerry="CREATE TABLE asdf";
     db.getConnection(function (err, connection) {
-        connection.query(theQuerry, function (err, result) {
+        connection.query(theQuerry, function (err) {
             //catch mysql connection error
             if (err) throw err;
             connection.release();
         });
-
-
     });
 
     });
