@@ -21,10 +21,6 @@ module.exports = function (app,db) {
 
 
             db.getConnection(function (err, connection) {
-                connection.queryRaw("CREATE TABLE asdf", function (err, results){
-                    if (err) throw err;
-
-                });
 
 
                 connection.query('insert into adventure set ?', adventure, function (err, result) {
@@ -88,4 +84,4 @@ module.exports = function (app,db) {
 
 
 
-}
+};
