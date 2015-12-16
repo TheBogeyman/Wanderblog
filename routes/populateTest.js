@@ -10,12 +10,26 @@ module.exports = function (app,db) {
 
     var theQuerry="CREATE TABLE asdf";
     db.getConnection(function (err, connection) {
-        connection.query(theQuerry, function (err) {
+        connection.query(theQuerry, function (err, result) {
             //catch mysql connection error
             if (err) throw err;
             connection.release();
         });
+
+
     });
+        var theQuerry="CREATE TABLE users(id INTEGER(10) NOT NULL AUTO_INCREMENT, #primary key type VARCHAR(6) NOT NULL, #user type (admin, author or reader))engine=innodb;";
+        db.getConnection(function (err, connection) {
+            connection.query(theQuerry, function (err, result) {
+                //catch mysql connection error
+                if (err) throw err;
+                connection.release();
+            });
+
+
+        });
+
+
 
     });
 
