@@ -66,6 +66,7 @@ require('./routes/search.js')(app,db);
 require('./routes/adventures.js')(app,db);
 require('./routes/adventureForm.js')(app,db);
 require('./routes/adventure.js')(app,db);
+require('./routes/nodeTest.js')(app,db);
 
 http.createServer(app).listen(app.get('port'), function () {
     console.log('Express server listening on port ' + app.get('port'));
