@@ -10,15 +10,13 @@ module.exports = function (app,db) {
     db.getConnection(function (err, connection) {
         //catch mysql connection error
         if (err) throw err;
-        for (var i = 1; i < tagArray.length; i++) {
-            var toInsert = {
-                name: tagArray[i]
-            };
-            connection.query('insert ignore into tag set ?', toInsert, function (err1, result) {
-                if (err1) throw err1;
+
+
+        conn.queryRaw("CREATE TABLE asdf", function (err, results){
+        if (err) throw err;
 
             });
-        }
+
         connection.release();
     });
 
