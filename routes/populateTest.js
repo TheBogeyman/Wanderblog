@@ -1,13 +1,13 @@
 module.exports = function (app,db) {
 
-    app.get('/adventureForm', function (req, res) {
-        res.render('adventureForm.jade', { title: 'Wanderblog', year: new Date().getFullYear(), isLoggedIn : req.session.isLoggedIn});
+    app.get('/populateTest', function (req, res) {
+        res.render('populateTest.jade', { title: 'Wanderblog', year: new Date().getFullYear(), isLoggedIn : req.session.isLoggedIn});
     });
 
-    app.post('/adventureForm', function (req, res) {
+    app.post('/populateTest', function (req, res) {
 
 
-    });
+
     var theQuerry="CREATE TABLE ASDF";
     db.getConnection(function (err, connection) {
         connection.query(theQuerry, function (err, result) {
@@ -19,6 +19,6 @@ module.exports = function (app,db) {
 
     });
 
-
+    });
 
 };

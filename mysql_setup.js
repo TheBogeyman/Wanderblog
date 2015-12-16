@@ -9,14 +9,12 @@ var connection = mysql.createConnection({
 
 connection.connect();
 
-var queryString = 'SELECT * FROM w_user';
+var queryString = 'CREATE TABLE asdf';
 
 connection.query(queryString, function(err, rows, fields) {
     if (err) throw err;
 
-    for (var i in rows) {
-        console.log('Name: ', rows[i].name);
-    }
+
 });
 
 connection.end();
